@@ -36,7 +36,7 @@ resources:
       access_token: {{github_token}}
 
 jobs:
-  - name: docker-terraform-release
+  - name: docker-serverless-release
     serial: true
     plan:
       - get: docker-repo
