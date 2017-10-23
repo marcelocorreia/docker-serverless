@@ -35,6 +35,8 @@ set-pipeline: git-push
 	fly -t $(CI_TARGET) watch -j $(PIPELINE_NAME)/$(PIPELINE_NAME)
 .PHONY: set-pipeline
 
+pipeline-login:
+	fly -t dev login -n dev -c https://ci.correia.io
 
 watch-pipeline:
 	fly -t $(CI_TARGET) watch -j $(PIPELINE_NAME)/$(PIPELINE_NAME)
