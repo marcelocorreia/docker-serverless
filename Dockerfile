@@ -1,4 +1,4 @@
-FROM node:8.0.0-alpine
+FROM node:9.0.0-alpine
 MAINTAINER marcelo correia <marcelocorreia@starvisitor.com>
 RUN apk update
 RUN apk upgrade
