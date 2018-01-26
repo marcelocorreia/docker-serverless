@@ -1,5 +1,5 @@
 FROM node:8.0.0-alpine
-MAINTAINER marcelo correia <marcelocorreia@starvisitor.com>
+MAINTAINER marcelo correia <marcelo@correia.io>
 RUN apk update
 RUN apk upgrade
 RUN apk add ca-certificates && update-ca-certificates
