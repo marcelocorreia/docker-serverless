@@ -1,4 +1,4 @@
-FROM node:9.4.0-alpine
+FROM node:8.9.4-alpine
 MAINTAINER marcelo correia <marcelo@correia.io>
 RUN apk update
 RUN apk upgrade
@@ -13,8 +13,7 @@ RUN apk add --no-cache --update \
     openssh \
     make \
     jq \
-    tzdata \
-    sudo
+    tzdata
 
 RUN pip install --upgrade pip
 RUN pip install awscli
@@ -23,5 +22,4 @@ RUN mkdir -p /opt/workspace
 RUN rm /var/cache/apk/*
 
 WORKDIR /opt/workspace
-RUN sudo chown -R $USER:$(id -gn $USER) /root/.config
 RUN npm install serverless -g
