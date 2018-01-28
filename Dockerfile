@@ -1,4 +1,4 @@
-FROM node:8.9.4-alpine
+FROM node:alpine
 MAINTAINER marcelo correia <marcelo@correia.io>
 RUN apk update
 RUN apk upgrade
@@ -13,7 +13,8 @@ RUN apk add --no-cache --update \
     openssh \
     make \
     jq \
-    tzdata
+    tzdata \
+    sudo
 
 RUN pip install --upgrade pip
 RUN pip install awscli
