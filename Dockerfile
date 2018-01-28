@@ -13,7 +13,8 @@ RUN apk add --no-cache --update \
     openssh \
     make \
     jq \
-    tzdata
+    tzdata \
+    sudo
 
 RUN pip install --upgrade pip
 RUN pip install awscli
