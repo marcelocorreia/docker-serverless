@@ -22,4 +22,4 @@ RUN mkdir -p /opt/workspace
 RUN rm /var/cache/apk/*
 
 WORKDIR /opt/workspace
-RUN npm install serverless -g
+RUN sudo npm install serverless -g
