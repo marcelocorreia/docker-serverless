@@ -23,4 +23,5 @@ RUN mkdir -p /opt/workspace
 RUN rm /var/cache/apk/*
 
 WORKDIR /opt/workspace
-RUN sudo npm install serverless -g
+RUN sudo chown -R $USER:$(id -gn $USER) /root/.config
+RUN npm install serverless -g
