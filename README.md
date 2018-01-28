@@ -2,7 +2,7 @@
 
 Docker image with [Serverless Framework](https://serverless.com/) + [AWS CLI](https://aws.amazon.com/cli/) + Goodies
 
-##### Github [https://github.com/marcelocorreia/docker-terraform](https://github.com/marcelocorreia/docker-terraform)
+##### Github [https://github.com/marcelocorreia/docker-serverless](https://github.com/marcelocorreia/docker-serverless)
  
 ### Packages
     - ca-certificates 
@@ -47,18 +47,8 @@ $> docker run --rm -v $(pwd):/opt/workspace \
    		-var aws_secret_key=${aws_secret_access_key}
 ```
 
-## Makefile example
-```makefile
-TODO:
-    echp "todo"
-```
 
 ### [Check the Concourse CI Pipeline used to build this image](https://github.com/marcelocorreia/docker-serverless/blob/master/pipeline.yml) 
 
-#### Concourse Build Configuration Example
-
-```yaml
-TODO
-```
 
 # docker-serverless
