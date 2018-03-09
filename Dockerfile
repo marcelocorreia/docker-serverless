@@ -16,6 +16,7 @@ RUN apk add --no-cache --update \
     tzdata \
     sudo
 
+
 RUN pip install --upgrade pip
 RUN pip install awscli
 
