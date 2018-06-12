@@ -3,7 +3,10 @@ CONTAINER=serverless
 NAMESPACE=marcelocorreia
 VERSION=$(shell cat version)
 PIPELINE_NAME=$(REPOSITORY)-release
-CI_TARGET=dev
+
+CI_TEAM ?= main
+CI_TARGET ?= main
+CONCOURSE_EXTERNAL_URL ?= http://localhost:8080
 
 git-push:
 	git add .; git commit -m "Pipeline WIP"; git push
@@ -30,13 +33,13 @@ set-pipeline: git-push
         -v git_branch=master \
         -v release_version=$(VERSION)
 
-	fly -t $(CI_TARGET) unpause-pipeline -p $(PIPELINE_NAME)
-	fly -t $(CI_TARGET) trigger-job -j $(PIPELINE_NAME)/$(PIPELINE_NAME)
-	fly -t $(CI_TARGET) watch -j $(PIPELINE_NAME)/$(PIPELINE_NAME)
+#	fly -t $(CI_TARGET) unpause-pipeline -p $(PIPELINE_NAME)
+#	fly -t $(CI_TARGET) trigger-job -j $(PIPELINE_NAME)/$(PIPELINE_NAME)
+#	fly -t $(CI_TARGET) watch -j $(PIPELINE_NAME)/$(PIPELINE_NAME)
 .PHONY: set-pipeline
 
 pipeline-login:
-	fly -t dev login -n dev -c https://ci.correia.io
+	fly -t $(CI_TEAM) login -n $(CI_TEAM) -c $(CONCOURSE_EXTERNAL_URL)
 
 watch-pipeline:
 	fly -t $(CI_TARGET) watch -j $(PIPELINE_NAME)/$(PIPELINE_NAME)
