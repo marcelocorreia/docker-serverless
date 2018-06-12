@@ -24,4 +24,5 @@ RUN mkdir -p /opt/workspace
 RUN rm /var/cache/apk/*
 
 WORKDIR /opt/workspace
-RUN npm install serverless -g
+RUN npm install -g try-thread-sleep
+RUN npm install -g serverless --ignore-scripts spawn-sync
